@@ -16,7 +16,7 @@ composer require lipichang/pagination:dev-master
 ### Example
 
 ``` php
-use Crasphb\Pagination;
+use Lipichang\Pagination;
 $pagination = new Pagination($target,1,['style' => 1,'simple'=>false,'allCounts'=>true,'nowAllPage'=>true,'toPage'=>true]);
 //数组的分页后的元素
 $item = $pagination->getItem();
