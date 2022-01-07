@@ -28,12 +28,11 @@ class Pagination{
 
     public function __construct($totalPage  , $options = [], $query = []){
 
-        if(!is_array($totalPage) || !$totalPage){
-            throw new Exception("总分页数量", 1);
+        if(!$totalPage){
+            $totalPage =1;
         }
-//        $this->totalPage = $totalPage;
         $this->query = $query;
-//        $this->totalCount = $totalPage;
+        $this->totalCount = $totalPage;
         $this->totalPage = $totalPage;
         $this->options = array_merge($this->options , $options);
         //获取总页数
