@@ -34,6 +34,7 @@ $page = $pagination->render();
 |  allCounts | boolean  |  显示总页数 |
 | nowAllPage  | boolean  |  显示现在的页码 |
 |  toPage |  boolean | 跳转页码的功能  |
+|  query |  array | 分页其他参数组合  |
 
 ### Show
 
