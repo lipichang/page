@@ -8,7 +8,7 @@
   ],
   "authors": [
     {
-      "name": "pagenation",
+      "name": "lipichang",
        "email": "781822910@qq.com"
     }
   ],
@@ -22,7 +22,7 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Pagenation\\": "src/"
+      "Lipichang\\": "src/"
     }
   }
 }
