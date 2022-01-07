@@ -8,13 +8,12 @@ namespace Lipichang;
  * @Last Modified time: 2022-01-07 18:56:08
  */
 class Pagination{
-    
-    //带分页的数组
-    public $target;  
+
+    //总分页数量
+    public $totalPage;
     //数组的大小    
     public $totalCount;
-    //每页的数目
-    public $defaultPageSize;
+
     //当前页
     public $pageNow;
     //上一页
@@ -27,15 +26,15 @@ class Pagination{
     //配置
     public $options = ['simple'=>false ,'style' => 1,'allCounts'=>false,'nowAllPage' => false,'toPage'=>false,'prev_mark'=> '«', 'next_mark'=>'»'];
 
-    public function __construct($target , $defaultPageSize = 8 , $options = [], $query = []){
+    public function __construct($totalPage  , $options = [], $query = []){
 
-        if(!is_array($target) || !$target){
-            throw new Exception("分页内容不能为空", 1);
+        if(!is_array($totalPage) || !$totalPage){
+            throw new Exception("总分页数量", 1);
         }
-        $this->target = $target;
+//        $this->totalPage = $totalPage;
         $this->query = $query;
-        $this->totalCount = count($target);
-        $this->defaultPageSize = $defaultPageSize;
+//        $this->totalCount = $totalPage;
+        $this->totalPage = $totalPage;
         $this->options = array_merge($this->options , $options);
         //获取总页数
         $this->getPageCount();
@@ -169,7 +168,7 @@ class Pagination{
      * @return [type] [description]
      */
     public function getPageCount(){
-        $this->pageCount = ceil( $this->totalCount / $this->defaultPageSize );
+        $this->pageCount = $this->totalPage;
         return $this->pageCount;
     }
     /**
