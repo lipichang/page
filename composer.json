@@ -1,5 +1,5 @@
 {
-  "name": "lpc/pagination",
+  "name": "lipichang/pagination",
   "description": "适用于所有程序的数组分页，内置分页样式,可定制样式,稍微修改一下可使用与所有的情形下的数组分页",
   "keywords": [
     "tp5",

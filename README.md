@@ -2,10 +2,10 @@
 数组分页,可定制样式,内置3种样式,稍微修改一下可使用与所有的情形下的数组分页
 
 ## Installation
-Pagination is available on [Packagist](https://packagist.org/packages/lpc/pagination).Just add this line to your `composer.json` file:
+Pagination is available on [Packagist](https://packagist.org/packages/lipichang/pagination).Just add this line to your `composer.json` file:
 
 ```json
-"lpc/pagination": "dev-master"
+"lipichang/pagination": "dev-master"
 ```
 
 or run
