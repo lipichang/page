@@ -133,7 +133,7 @@ class Pagination{
      * 获取分页后的数组
      * @return [type] [description]
      */
-  
+
     /**
      * 渲染分页样式
      * @return [type] [description]
@@ -307,18 +307,18 @@ class Pagination{
     protected function getParams($server, $page = 1){
 
         if($this->query){
-            $getUrl = $this->query;
+            $query = $this->query;
+
         } else {
             $getUrl = $this->getUrl($server);
+            $parse = parse_url($getUrl);
+            $query = [];
+            //获取参数
+            if(isset($parse['query'])){
+                parse_str($parse['query'], $query);
+            }
         }
 
-        $parse = parse_url($getUrl);
-        $query = [];
-        //获取参数
-        if(isset($parse['query'])){
-            parse_str($parse['query'], $query);
-        }
-        
         //替换page参数
         $query['page'] = $page;
         return $query;     
