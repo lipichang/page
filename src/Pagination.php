@@ -1,11 +1,11 @@
 <?php
 namespace Crasphb;
 /**
- * 适用于tp5的数组分页
- * @Author: CraspHB彬
- * @Date:   2018-07-19 16:41:06
- * @Email:   646054215@qq.com
- * @Last Modified time: 2020-05-08 16:56:08
+
+ * @Author: lipichang
+ * @Date:   2022-01-07 16:41:06
+ * @Email:   781822910@qq.com
+ * @Last Modified time: 2022-01-07 18:56:08
  */
 class Pagination{
     
@@ -23,15 +23,17 @@ class Pagination{
     public $pageNext;
     //总页数
     public $pageCount;
+    public $query;
     //配置
     public $options = ['simple'=>false ,'style' => 1,'allCounts'=>false,'nowAllPage' => false,'toPage'=>false,'prev_mark'=> '«', 'next_mark'=>'»'];
 
-    public function __construct($target , $defaultPageSize = 8 , $options = []){
+    public function __construct($target , $defaultPageSize = 8 , $options = [], $query = []){
 
         if(!is_array($target) || !$target){
             throw new Exception("分页内容不能为空", 1);
         }
         $this->target = $target;
+        $this->query = $query;
         $this->totalCount = count($target);
         $this->defaultPageSize = $defaultPageSize;
         $this->options = array_merge($this->options , $options);
@@ -309,7 +311,11 @@ class Pagination{
      */
     protected function getParams($server, $page = 1){
 
-        $getUrl = $this->getUrl($server);
+        if($this->query){
+            $getUrl = $this->query;
+        } else {
+            $getUrl = $this->getUrl($server);
+        }
 
         $parse = parse_url($getUrl);
         $query = [];

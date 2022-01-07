@@ -11,7 +11,7 @@ Pagination is available on [Packagist](https://packagist.org/packages/lipichang/
 or run
 
 ```sh
-composer require lpc/pagination:dev-master
+composer require lipichang/pagination:dev-master
 ```
 ### Example
 
