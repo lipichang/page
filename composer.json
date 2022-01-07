@@ -1,5 +1,5 @@
 {
-  "name": "phprookiehbb/pagination",
+  "name": "lpc/pagination",
   "description": "适用于所有程序的数组分页，内置分页样式,可定制样式,稍微修改一下可使用与所有的情形下的数组分页",
   "keywords": [
     "tp5",
@@ -8,8 +8,8 @@
   ],
   "authors": [
     {
-      "name": "crasphb",
-       "email": "646054215@qq.com"
+      "name": "pagenation",
+       "email": "781822910@qq.com"
     }
   ],
   "minimum-stability": "dev",
@@ -22,7 +22,7 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Crasphb\\": "src/"
+      "Pagenation\\": "src/"
     }
   }
 }
