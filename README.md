@@ -2,16 +2,16 @@
 数组分页,可定制样式,内置3种样式,稍微修改一下可使用与所有的情形下的数组分页
 
 ## Installation
-Pagination is available on [Packagist](https://packagist.org/packages/phprookiehbb/pagination).Just add this line to your `composer.json` file:
+Pagination is available on [Packagist](https://packagist.org/packages/lpc/pagination).Just add this line to your `composer.json` file:
 
 ```json
-"phprookiehbb/pagination": "dev-master"
+"lpc/pagination": "dev-master"
 ```
 
 or run
 
 ```sh
-composer require phprookiehbb/pagination:dev-master
+composer require lpc/pagination:dev-master
 ```
 ### Example
 
