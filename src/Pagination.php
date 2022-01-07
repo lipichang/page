@@ -133,10 +133,7 @@ class Pagination{
      * 获取分页后的数组
      * @return [type] [description]
      */
-    public function getItem(){
-         
-         return array_slice($this->target , $this->offset() , $this->limit());
-    }
+  
     /**
      * 渲染分页样式
      * @return [type] [description]
