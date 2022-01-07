@@ -26,7 +26,7 @@ class Pagination{
     //配置
     public $options = ['simple'=>false ,'style' => 1,'allCounts'=>false,'nowAllPage' => false,'toPage'=>false,'prev_mark'=> '«', 'next_mark'=>'»'];
 
-    public function __construct($totalPage  , $options = [], $query = []){
+    public function __construct($totalPage  , $options = array(), $query = array()){
 
         if(!$totalPage){
             $totalPage =1;
@@ -69,11 +69,11 @@ class Pagination{
         $pageLink = '';
         $side   = 2;
         $window = $side * 2;
-        $block = [
-              'first'=>[],
-              'last'=>[],
-              'slider'=>[]
-        ];
+        $block = array(
+            'first'=>array(),
+            'last'=>array(),
+            'slider'=>array()
+        );
         if ($this->pageCount < $window + 6) {
             $block['first'] = $this->getPageRange(1, $this->pageCount);
         } elseif ($this->pageNow <= $window) {
@@ -123,7 +123,7 @@ class Pagination{
      * @return [type]        [description]
      */
     protected function getPageRange($start, $end){
-        $urls = [];
+        $urls = array();
         for ($page = $start; $page <= $end; $page++) {
             $urls[$page] = $this->url($page);
         }
@@ -312,7 +312,7 @@ class Pagination{
         } else {
             $getUrl = $this->getUrl($server);
             $parse = parse_url($getUrl);
-            $query = [];
+            $query = array();
             //获取参数
             if(isset($parse['query'])){
                 parse_str($parse['query'], $query);
