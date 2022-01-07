@@ -17,9 +17,8 @@ composer require lipichang/pagination:dev-master
 
 ``` php
 use Lipichang\Pagination;
-$pagination = new Pagination($target,1,['style' => 1,'simple'=>false,'allCounts'=>true,'nowAllPage'=>true,'toPage'=>true]);
-//数组的分页后的元素
-$item = $pagination->getItem();
+$pagination = new Pagination($totalPage,['style' => 1,'simple'=>false,'allCounts'=>true,'nowAllPage'=>true,'toPage'=>true],['title' => 'shoes']);
+
 //分页样式的渲染
 $page = $pagination->render();
 ```
@@ -27,14 +26,13 @@ $page = $pagination->render();
 ### Explanation
 |  参数 |  类型 |  说明 |
 | ------------ | ------------ |------------ |
-| target  | array  | 需要分页的数组  |
-| defaultPageSize  | int  | 每页的数目  |
+| totalPage  | array  | 总页数  |
 |  style | int  | 分页样式，可选值1,2,3  |
 |  simple | boolean  |  true:简单的分页样式,false:复杂的分页样式 |
 |  allCounts | boolean  |  显示总页数 |
 | nowAllPage  | boolean  |  显示现在的页码 |
 |  toPage |  boolean | 跳转页码的功能  |
-|  query |  array | 分页其他参数组合  |
+|  query |  array | 分页其他查询参数  |
 
 ### Show
 
