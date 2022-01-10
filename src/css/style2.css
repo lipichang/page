@@ -25,11 +25,14 @@
     margin: 0;
     text-align: center;
     margin: 0 5px;
-    background-color: #f4f4f5;
     color: #606266;
     min-width: 30px;
-    border-radius: 2px;
+    border-radius: 20px;
     padding: 0 5px;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    background-color: #ffffff;
+    color: #b6b9bc;
+
 }
 .hbb-pagination li a {
     color: #333;
@@ -41,7 +44,7 @@
     padding: 0 5px;
 }
 .hbb-pagination li.active {
-    background-color: #409eff;
+    background-color: #616ad4;
     color: #fff;
     cursor: default;
 }
