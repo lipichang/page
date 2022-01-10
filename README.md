@@ -42,7 +42,7 @@ $page = $pagination->render();
 #### style = 1,2,3
 ![Image1 text](https://i.loli.net/2019/05/22/5ce4b4d734bd981604.png)
 
-![Image1 text](https://i.loli.net/2019/05/22/5ce4b4f0bcfd011862.png)
+![Image1 text](https://img.mysourcify.com/2022/01/10/317a2985aefc8b1174b9e51918c0e365.png)
 
 ![Image1 text](https://i.loli.net/2019/05/22/5ce4b5023ab7654710.png)
 #### allCount,nowAllPage,toPage模式
