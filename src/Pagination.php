@@ -24,7 +24,7 @@ class Pagination{
     public $pageCount;
     public $query;
     //配置
-    public $options = ['simple'=>false ,'style' => 1,'allCounts'=>false,'nowAllPage' => false,'toPage'=>false,'prev_mark'=> '«', 'next_mark'=>'»'];
+    public $options = ['simple'=>false ,'style' => 1,'is_style' => true,'allCounts'=>false,'nowAllPage' => false,'toPage'=>false,'prev_mark'=> '«', 'next_mark'=>'»'];
 
     public function __construct($totalPage  , $options = array(), $query = array()){
 
@@ -139,14 +139,15 @@ class Pagination{
      * @return [type] [description]
      */
     public function render(){
+        $style = $this->options['is_style'] ? $this->getStyle():'';
         if($this->options['simple']){
             return sprintf(
-                $this->getStyle().'<ul class="hbb-pagination">%s  %s</ul>',
+                $style.'<ul class="hbb-pagination">%s  %s</ul>',
                 $this->getPrevPage(),
                 $this->getNextPage()
             );            
         }
-        $page = $this->getStyle().'<ul class="hbb-pagination">'.$this->getPrevPage().$this->getLinks(). $this->getNextPage();
+        $page = $style.'<ul class="hbb-pagination">'.$this->getPrevPage().$this->getLinks(). $this->getNextPage();
         if($this->options['allCounts']){
             $page .= $this->getAllCounts();
         }
