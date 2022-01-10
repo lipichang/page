@@ -26,7 +26,7 @@ $page = $pagination->render();
 ### Explanation
 |  参数 |  类型 |  说明 |
 | ------------ | ------------ |------------ |
-| totalPage  | array  | 总页数  |
+| totalPage  | int  | 总页数  |
 |  style | int  | 分页样式，可选值1,2,3  |
 |  is_style | boolean  | 是否使用默认样式true是 false否 默认true  |
 |  is_follow | boolean  | 是否允许搜索引擎跟踪 true 是 false 否 默认true  |
