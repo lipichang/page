@@ -1,7 +1,10 @@
 {
   "name": "lipichang/pagination",
-  "description": "适用于所有程序的数组分页，内置分页样式,可定制样式,稍微修改一下可使用与所有的情形下的数组分页",
+  "description": "分页，提供分页总数，分页参数自动分割，有默认样式可以参考也可以自己定义",
   "keywords": [
+    "wordpress",
+    "php",
+    "laravel",
     "tp5",
     "pagination",
     "array"

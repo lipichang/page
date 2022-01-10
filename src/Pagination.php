@@ -24,7 +24,7 @@ class Pagination{
     public $pageCount;
     public $query;
     //配置
-    public $options = ['simple'=>false ,'style' => 1,'is_style' => true,'allCounts'=>false,'nowAllPage' => false,'toPage'=>false,'prev_mark'=> '«', 'next_mark'=>'»'];
+    public $options = ['simple'=>false ,'style' => 1,'is_style' => true,'is_follow' => true,'allCounts'=>false,'nowAllPage' => false,'toPage'=>false,'prev_mark'=> '«', 'next_mark'=>'»'];
 
     public function __construct($totalPage  , $options = array(), $query = array()){
 
@@ -209,7 +209,10 @@ class Pagination{
      * @return [type]       [description]
      */
     protected function getAvailablePageWrapper($url , $page){
-        return '<li><a href="' . htmlentities($url) . '">' . $page . '</a></li>';
+        if($this->options['is_follow'] ===false){
+            $nofollow = 'ref="nofollow"';
+        }
+        return '<li><a '.$nofollow.' href="' . htmlentities($url) . '">' . $page . '</a></li>';
     }
     /**
      * 生成禁用按钮
