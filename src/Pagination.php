@@ -209,6 +209,7 @@ class Pagination{
      * @return [type]       [description]
      */
     protected function getAvailablePageWrapper($url , $page){
+        $nofollow='';
         if($this->options['is_follow'] ===false){
             $nofollow = 'ref="nofollow"';
         }
