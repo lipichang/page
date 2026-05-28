@@ -11,7 +11,7 @@ class Pagination{
 
     //总分页数量
     public $totalPage;
-    //数组的大小    
+    //数组的大小
     public $totalCount;
 
     //当前页
@@ -44,7 +44,7 @@ class Pagination{
      * @return [type] [description]
      */
     protected function getPage(){
-        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $page = (int)isset($_GET['page']) ? $_GET['page'] : 1;
         if($page < 1){
             $page = 1;
         }
@@ -57,7 +57,7 @@ class Pagination{
         }
         if($this->hasMore($page , 'prev')){
             $this->pagePrev = $page - 1;
-        }         
+        }
     }
     /**
      * 获取中间的页码
@@ -127,7 +127,7 @@ class Pagination{
         for ($page = $start; $page <= $end; $page++) {
             $urls[$page] = $this->url($page);
         }
-        return $urls;        
+        return $urls;
     }
     /**
      * 获取分页后的数组
@@ -145,7 +145,7 @@ class Pagination{
                 $style.'<ul class="hbb-pagination">%s  %s</ul>',
                 $this->getPrevPage(),
                 $this->getNextPage()
-            );            
+            );
         }
         $page = $style.'<ul class="hbb-pagination">'.$this->getPrevPage().$this->getLinks(). $this->getNextPage();
         if($this->options['allCounts']){
@@ -156,7 +156,7 @@ class Pagination{
         }
         if($this->options['toPage']){
             $page .= $this->getToPage();
-        }        
+        }
         $page .= '</ul>';
         return $page;
     }
@@ -196,12 +196,12 @@ class Pagination{
           if ($this->pageNow == $this->pageNext) {
               if(!$this->options['simple']){
                  return '';
-              }            
+              }
               return $this->getDisabledTextWrapper($mark);
           }
           $url = $this->url($this->pageNext);
           return $this->getAvailablePageWrapper($url , $mark);
-    }    
+    }
     /**
      * [生成可点击按钮]
      * @param  [type] $url  [description]
@@ -297,11 +297,11 @@ class Pagination{
      * @return [type]         [description]
      */
     protected function getBaseUrl($server){
-        
+
         $getUrl = $this->getUrl($server);
         $parse = parse_url($getUrl);
-        //获取url     
-        return $parse['scheme'].'://'.$parse['host'].$parse['path'];       
+        //获取url
+        return $parse['scheme'].'://'.$parse['host'].$parse['path'];
     }
     /**
      * 获取params
@@ -325,8 +325,8 @@ class Pagination{
         }
 
         //替换page参数
-        $query['page'] = $page;
-        return $query;     
+        $query['page'] = (int)$page;
+        return $query;
     }
     /**
      * 生成url
@@ -339,15 +339,15 @@ class Pagination{
         }
 
         $server = $_SERVER;
-        //获取url     
+        //获取url
         $baseUrl = $this->getBaseUrl($server);
 
         $param = http_build_query($this->getParams($server, $page));
         //生成url
         $url = $baseUrl . '?' . $param;
-        
+
         return $url;
-        
+
     }
     protected function getStyle(){
         $style = $this->options['style'];
